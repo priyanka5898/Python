@@ -1,0 +1,68 @@
+ Calculator.html: 
+<!DOCTYPE html> 
+<html> 
+ <head> 
+ <Ɵtle>Simple Calculator</Ɵtle>
+ </head> 
+ <body> 
+ <form acƟon="Calculator.php" method="get">
+ <table border="1px solid"> 
+ <tr> 
+ <th colspan="2">Simple Calculator</th> 
+ </tr> 
+ <tr> 
+ <td>Enter the first number:</td> 
+ <td> 
+ <input type="text" name="num1"> 
+ </td> 
+ </tr> 
+ <tr> 
+ <td>Enter the second number:</td> 
+ <td> 
+ <input type="text" name="num2"> 
+ </td> 
+ </tr> 
+ <tr> 
+ <td>Select Operator:</td> 
+ <td> 
+ <select name="operator"> 
+ <opƟon value="+">+</opƟon>
+ <opƟon value="-">-</opƟon>
+ <opƟon value="*">*</opƟon>
+ <opƟon value="/">/</opƟon>
+ </select> 
+ </td> 
+ </tr> 
+ <tr> 
+ <td colspan="2"> 
+ <input type="submit" value="Calculate"> 
+ </td> 
+ </tr> 
+ </table> 
+ </form> 
+ </body> 
+</html> 
+ Calculator.php:
+<?php 
+ $num1=$_GET['num1']; 
+ $num2=$_GET['num2']; 
+ $op=$_GET['operator']; 
+ funcƟon calculate($num1,$num2,$op)
+ { 
+ if($op=='+') 
+ return $num1+$num2; 
+ else if($op=='-') 
+ return $num1-$num2; 
+ else if($op=='*') 
+ return $num1*$num2; 
+ else if($op=='/') 
+ return $num1/$num2; 
+ else 
+ return null; 
+ } 
+$res=calculate($num1,$num2,$op); 
+if($res==null) 
+ echo "Select the correct operator."; 
+else 
+ echo "The result is: ",$res; 
+?>

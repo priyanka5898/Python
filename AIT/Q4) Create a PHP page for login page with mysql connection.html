@@ -1,0 +1,38 @@
+Q4) Create a PHP page for login page with MySQL connecƟon. 
+ LoginForm.html: 
+<!DOCTYPE html> 
+<html> 
+ <head> 
+ <Ɵtle>Login Page</Ɵtle>
+ </head> 
+ <body> 
+ <h2>Login Page</h2> 
+ <form acƟon="LoginPage2.php" method="get">
+ <label>Enter username: </label> <input type="text" name="username"> <br><br> 
+ <label>Enter password: </label> <input type="password" name="password"> <br><br> 
+ <input type="submit" value="Submit"> 
+ <input type="submit" value="Reset"> 
+ </form> 
+ </body> 
+</html> 
+ LoginForm.php: 
+<?php 
+ $username=$_GET['username']; 
+ $password=$_GET['password']; 
+ $servername="localhost"; 
+ $dbusername="root"; 
+ $dbpassword=""; 
+ $dbname="testschema"; 
+ $conn=mysqli_connect($servername,$dbusername,$dbpassword,$dbname); 
+ if(!$conn) 
+ die("ConnecƟon could not be established.");
+ $query="select * from user where username='$username' and password='$password'"; 
+ 
+ $result=mysqli_query($conn,$query); 
+ $rows=mysqli_num_rows($result); 
+ 
+ if($rows==1) 
+ echo "Login successful."; 
+ else 
+ echo "CredenƟals do not match.";
+?> 

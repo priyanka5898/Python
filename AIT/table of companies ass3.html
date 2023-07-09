@@ -1,0 +1,65 @@
+Write HTML code to design a web as per given specification. Divide the browser screen into two frames. The first frame will display the heading. Divide the second frame into two columns. The frame on the left should be name of cities consisting of hyperlinks. Clicking on any one of these hyperlinks will display related information in right hand side frame as shown below 
+IT companies in India 
+City 
+•	Pune 
+•	Mumbai 
+•	Banglore 	Pune  
+•	Infosys  
+•	Persistent 
+ 
+Main.html 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>City Information</title> 
+</head> 
+<frameset cols="30%, 70%"> 
+    <frame name="headingFrame" src="header.html"> 
+    <frame name="contentFrame" src="content.html"> 
+</frameset> 
+</html>  
+ 
+Header.html 
+<!DOCTYPE html> 
+<html> 
+<head> 
+   <title>City Information</title> 
+</head> 
+<frameset cols="30%, 70%"> 
+    <frame name="headingFrame" src="header.html"> 
+    <frame name="contentFrame" src="content.html"> 
+</frameset> 
+</html> 
+ 
+ 
+Content.html 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>City Information</title> 
+</head> 
+<body> 
+    <h2>Cities</h2> 
+    <ul> 
+        <li><a href="pune.html" target="contentFrame">Pune</a></li> 
+        <li><a href="mumbai.html" target="contentFrame">Mumbai</a></li> 
+        <li><a href="bangalore.html" target="contentFrame">Bangalore</a></li> 
+    </ul> 
+</body> 
+</html>  
+ 
+Pune.html 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Pune - IT Companies</title> 
+</head> 
+<body> 
+    <h2>Pune</h2> 
+    <ul> 
+        <li>Infosys</li> 
+        <li>Persistent</li> 
+    </ul> 
+</body> 
+</html>  
+ 

@@ -1,0 +1,32 @@
+2. Write an AngularJS script for addition of two numbers using nginit, ng-model & ng-bind. And also Demonstrate ng-show, ngdisabled, ng-click directives on button component. 
+<!DOCTYPE html> 
+<html ng-app="calculatorApp"> 
+<head> 
+<script 
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+</head> 
+<body> 
+<div ng-controller="CalculatorController"> 
+<h2>Calculator</h2> 
+<label for="num1">Number 1:</label> 
+<input type="number" id="num1" ng-model="number1" ng-init="number1 = 0"> 
+<label for="num2">Number 2:</label> 
+<input type="number" id="num2" ng-model="number2" ng-init="number2 = 0"> 
+<button ng-click="addNumbers()" ng-disabled="!number1 || !number2">Add</button> 
+<div ng-show="showResult"> 
+<h3>Result:</h3> 
+<p ng-bind="result"></p> 
+</div> 
+</div> 
+<script> 
+angular.module('calculatorApp', []) 
+.controller('CalculatorController', ['$scope', function($scope) { 
+$scope.addNumbers = function() { 
+$scope.result = parseFloat($scope.number1) + parseFloat($scope.number2); 
+$scope.showResult = true; 
+}; 
+$scope.showResult = false; 
+}]); 
+</script> 
+</body> 
+</html>

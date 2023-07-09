@@ -1,0 +1,53 @@
+Write HTML code to design a website for Online Shopping. Design home page which consist of list of items each with hyperlink, clicking on which should display related information on separate web page. (Use external CSS to format each web page) 
+ 
+Main.html 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Online Shopping</title> 
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+</head> 
+<body> 
+    <h1>Welcome to our Online Shopping Store</h1> 
+    <ul> 
+        <li><a href="item.html">Item 1</a></li> 
+        <li><a href="item.html">Item 2</a></li> 
+        <li><a href="item.html">Item 3</a></li> 
+        <!-- Add more items as needed --> 
+    </ul> 
+</body> 
+</html> 
+ 
+ 
+Main.css 
+/* styles.css */ body {     font-family: Arial, sans-serif;     background-color: #f5f5f5;     margin: 0;     padding: 20px; 
+}  h1 { 
+    text-align: center;     color: #333; 
+}  ul { 
+    list-style-type: none;     padding: 0; 
+} 
+ 
+li { 
+    margin-bottom: 10px; 
+} 
+ 
+a {     display: block;     padding: 10px;     background-color: #fff;     text-decoration: none;     color: #333;     border: 1px solid #ccc;     border-radius: 4px; 
+}  a:hover {     background-color: #f5f5f5; 
+} 
+ 
+ 
+Item.html 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Item 1 - Online Shopping</title> 
+ 
+</head> 
+<body> 
+    <h1>Item 1</h1> 
+    <p>This is the description for Item 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat ex ut erat porta, nec pellentesque velit dapibus. Mauris vulputate magna non iaculis dignissim.</p> 
+    <p>Price: $19.99</p> 
+    <a href="main.html">Back to Home</a> 
+</body> 
+</html> 
+ 
