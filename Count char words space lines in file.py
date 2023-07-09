@@ -1,0 +1,11 @@
+f=open("Demo")
+content=f.read()
+char = len(content)
+words=len(content.split())
+spaces=content.count(" ")
+lines=content.count("\n")+1
+print("Number of characters:", char)
+print("Number of words:", words)
+print("Number of spaces:", spaces)
+print("Number of lines:", lines)
+f.close()
